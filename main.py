@@ -41,4 +41,4 @@ def main():
 if __name__ == '__main__': 
 	while True:    
 		main()      
-		sleep(3600) #every x time
+		sleep(3600) #every 1 hour = 3600
