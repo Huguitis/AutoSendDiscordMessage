@@ -16,7 +16,7 @@ def get_connection():
  
 def send_message(conn, channel_id, message_data): 
     try: 
-        conn.request("POST", f"/api/v10/channels/{channel_id}/messages", message_data, header_data) 
+        conn.request("POST", f"/api/v7/channels/{channel_id}/messages", message_data, header_data) 
         resp = conn.getresponse() 
          
         if 199 < resp.status < 300: 
