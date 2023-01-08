@@ -6,9 +6,7 @@ from time import sleep
 header_data = { 
 	"content-type": "application/json", 
 	"user-agent": "discordapp.com", 
-	"authorization": "PUT HERE YOUR ACCOUNT TOKEN", 
-	"host": "discordapp.com", 
-	"referer": "PUT HERE THE DISCORD CHANNEL URL" 
+	"authorization": "ACCOUNT TOKEN"
 } 
  
 def get_connection(): 
@@ -20,23 +18,23 @@ def send_message(conn, channel_id, message_data):
         resp = conn.getresponse() 
          
         if 199 < resp.status < 300: 
-            print("Enviado correctamente") 
+            print("Message Sent") 
             pass 
  
         else: 
-            stderr.write(f"HTTP recibido {resp.status}: {resp.reason}\n") 
+            stderr.write(f"HTTP {resp.status}: {resp.reason}\n") 
             pass 
  
     except: 
-        stderr.write("Hubo un error al intentar enviar el mensaje\n") 
+        stderr.write("Error\n") 
  
 def main(): 
 	message_data = { 
-		"content": "Hey, mandaré este mensaje cada 1 hora", 
-		"tts": "false", 
+		"content": "Hey, I will send this message every 1 hour.", 
+		"tts": "false"
 	} 
  
-	send_message(get_connection(), "PUT HERE THE CHANNEL ID", dumps(message_data)) 
+	send_message(get_connection(), "CHANNEL ID", dumps(message_data)) 
  
 if __name__ == '__main__': 
 	while True:    
