@@ -2,11 +2,19 @@ from http.client import HTTPSConnection
 from sys import stderr 
 from json import dumps 
 from time import sleep 
- 
+import json
+#Load Config
+with open('./config.json') as f:
+  data = json.load(f)
+  for c in data['Config']:
+        print('Loading...')
+channelid = c['channelid']
+token = c['token']
+message = c['message']
 header_data = { 
 	"content-type": "application/json", 
 	"user-agent": "discordapp.com", 
-	"authorization": "ACCOUNT TOKEN"
+	"authorization": token
 } 
  
 def get_connection(): 
@@ -30,11 +38,11 @@ def send_message(conn, channel_id, message_data):
  
 def main(): 
 	message_data = { 
-		"content": "Hey, I will send this message every 1 hour.", 
+		"content": message, 
 		"tts": "false"
 	} 
  
-	send_message(get_connection(), "CHANNEL ID", dumps(message_data)) 
+	send_message(get_connection(), channelid, dumps(message_data)) 
  
 if __name__ == '__main__': 
 	while True:    
