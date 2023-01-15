@@ -8,9 +8,9 @@ with open('./config.json') as f:
   data = json.load(f)
   for c in data['Config']:
         print('Loading...')
-channelid = c['channelid']
-token = c['token']
-message = c['message']
+channelid = c['channelid'] #modify this in config.json
+token = c['token'] #modify this in config.json
+message = c['message'] #modify this in config.json
 header_data = { 
 	"content-type": "application/json", 
 	"user-agent": "discordapp.com", 
@@ -47,4 +47,4 @@ def main():
 if __name__ == '__main__': 
 	while True:    
 		main()      
-		sleep(3600) #every 1 hour = 3600
+		sleep(3600) #How often the message will be sent (in seconds), every 1 hour = 3600
