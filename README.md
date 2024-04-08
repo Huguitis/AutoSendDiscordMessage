@@ -4,7 +4,6 @@ AutoSendDiscordMessage is a simple Python script designed to automate the sendin
 ## Features
 - Ease of Use: Set it up easily by filling out the configuration in the config.json file.
 - Automation: The script continuously sends messages based on the specified time interval.
-- Support: Join our [Discord server](https://discord.gg/huguitis-nodes1free-hosting-926816871989252157) for assistance and discussions.
 
 ## Setup
 1. **Fill Out The Config**:
